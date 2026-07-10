@@ -1,0 +1,188 @@
+Bu sayfa, Claude Fable 5 ve Claude Mythos 5 modellerinin resmi tanıtım duyurusudur. Anthropic, bu duyuruda iki modelin teknik yeteneklerini, aralarındaki farkları ve neden iki farklı sürüm yayınladığını ayrıntılı olarak açıklıyor.  
+
+⸻
+
+Genel Bakış
+
+Anthropic, 9 Haziran 2026’da iki yeni modeli aynı anda tanıttı:
+
+* Claude Fable 5 → Genel kullanıma açık sürüm
+* Claude Mythos 5 → Sadece onaylı kuruluşlara sunulan, siber güvenlik odaklı sürüm
+
+Şirketin temel mesajı şu:
+
+Her iki model de aynı nesil teknolojiye dayanıyor. Ancak Mythos 5, yüksek riskli siber güvenlik yetenekleri nedeniyle sınırlı erişimle sunulurken, Fable 5 gelişmiş güvenlik önlemleriyle herkesin kullanımına açılıyor.  
+
+⸻
+
+1. Fable 5 ve Mythos 5’in temel amacı
+
+Anthropic’e göre yeni modeller önceki Claude nesillerine göre özellikle şu alanlarda büyük ilerleme sağlıyor:
+
+* Yazılım geliştirme
+* Kod analizi
+* Uzun süreli otonom görevler
+* Karmaşık problem çözme
+* Araştırma ve bilgi işleme
+* Görsel analiz
+* Hafıza ve uzun bağlam yönetimi
+* Yaşam bilimleri araştırmaları
+
+Özellikle modelin uzun süre insan müdahalesi olmadan çok adımlı görevleri sürdürebilmesi önemli bir yenilik olarak öne çıkarılıyor.  
+
+⸻
+
+2. Yazılım mühendisliğinde önemli gelişmeler
+
+Anthropic, en büyük gelişmenin yazılım geliştirme tarafında olduğunu vurguluyor.
+
+Model artık:
+
+* Büyük kod tabanlarını analiz edebiliyor.
+* Binlerce dosyayı ilişkilendirebiliyor.
+* Refactoring yapabiliyor.
+* Karmaşık hata ayıklama süreçlerini yönetebiliyor.
+* Yeni özellik geliştirebiliyor.
+* Test senaryoları oluşturabiliyor.
+
+Bu özellikler özellikle büyük kurumsal yazılım projeleri için hedeflenmiş durumda.  
+
+⸻
+
+3. Daha uzun otonom çalışma
+
+Önceki Claude modellerine göre Fable 5 ve Mythos 5:
+
+* Daha uzun süre plan yapabiliyor.
+* Çok adımlı görevleri takip edebiliyor.
+* Ara sonuçları hatırlayabiliyor.
+* Hatalarını düzelterek ilerleyebiliyor.
+
+Anthropic bunu “autonomous work” (otonom çalışma) yeteneği olarak tanımlıyor.  
+
+⸻
+
+4. Görsel analiz (Vision)
+
+Yeni modeller yalnızca metin değil;
+
+* ekran görüntülerini,
+* diyagramları,
+* grafik ve tabloları,
+* teknik dokümanları
+
+çok daha başarılı analiz edebiliyor.
+
+Bu yetenek özellikle yazılım geliştirme ve teknik incelemeler için geliştirilmiş.  
+
+⸻
+
+5. Uzun bağlam (Long Context)
+
+Anthropic, modellerin büyük miktarda veriyi aynı anda işleyebildiğini belirtiyor.
+
+Örneğin:
+
+* yüzlerce sayfalık teknik doküman,
+* büyük kaynak kod depoları,
+* log dosyaları,
+* sistem konfigürasyonları
+
+tek oturumda analiz edilebiliyor.  
+
+⸻
+
+6. Yaşam bilimleri araştırmaları
+
+Modeller yalnızca yazılım için geliştirilmedi.
+
+Anthropic;
+
+* biyoloji,
+* sağlık,
+* ilaç geliştirme,
+* bilimsel araştırmalar
+
+alanlarında da önemli performans artışları olduğunu belirtiyor.
+
+Ancak bu alanlar da güvenlik açısından hassas kabul edildiği için Mythos sürümüne ek erişim kontrolleri uygulanıyor.  
+
+⸻
+
+7. Fable 5 ile Mythos 5 arasındaki temel fark
+
+Bu sayfanın en önemli kısmı burasıdır.
+
+Anthropic’e göre:
+
+Claude Mythos 5
+
+* En yüksek siber güvenlik yeteneklerine sahiptir.
+* Kritik yazılım açıklarını bulabilir.
+* Exploit geliştirme konusunda daha gelişmiştir.
+* Güvenlik araştırmalarında kullanılmak üzere tasarlanmıştır.
+* Yalnızca Project Glasswing kapsamındaki onaylı kuruluşlara sunulur.
+
+⸻
+
+Claude Fable 5
+
+* Aynı temel model ailesini kullanır.
+* Günlük kullanım için tasarlanmıştır.
+* Zararlı olabilecek siber güvenlik, biyoloji ve sağlık taleplerinde güvenlik mekanizmaları devreye girer.
+* Gerekirse bazı istekler daha güvenli bir modele yönlendirilir.
+
+Anthropic, Fable 5’in “Mythos sınıfı yetenekleri güvenlik önlemleriyle sunan model” olduğunu ifade ediyor.  
+
+⸻
+
+8. Güvenlik (Safeguards)
+
+Fable 5’in en önemli özelliği, yerleşik güvenlik katmanlarıdır.
+
+Riskli görülen istemlerde:
+
+* İstek analiz edilir.
+* Güvenlik sınıflandırıcısı çalışır.
+* Gerekirse istek reddedilir.
+* Alternatif olarak daha düşük yetenekli bir modele yönlendirilir.
+
+Bu sayede genel kullanıcılar güçlü modelden yararlanırken yüksek riskli kullanım senaryoları sınırlandırılır.  
+
+⸻
+
+9. Benchmark Sonuçları
+
+Sayfada, Fable 5 ve Mythos 5’in diğer önde gelen modellerle karşılaştırıldığı benchmark tabloları yer alıyor.
+
+Anthropic özellikle şu alanlarda üstün performans iddia ediyor:
+
+* Yazılım geliştirme
+* Kod üretimi
+* Otonom görev tamamlama
+* Bilgi işleme
+* Bilimsel araştırma
+* Görsel analiz
+
+Mythos 5, siber güvenlik değerlendirmelerinde en yüksek performansı gösteren sürüm olarak konumlandırılıyor.  
+
+⸻
+
+10. Fiyatlandırma
+
+Her iki model için API fiyatlandırması aynıdır:
+
+* Giriş (Input): 1 milyon token başına 10 ABD doları
+* Çıkış (Output): 1 milyon token başına 50 ABD doları
+
+Ancak Mythos 5 herkese açık olmadığı için bu fiyat yalnızca erişim hakkı bulunan kuruluşlar için geçerlidir.  
+
+⸻
+
+Doküman açısından çıkarılabilecek temel mesajlar
+
+Bu duyuru, Anthropic’in iki farklı kullanım senaryosu için iki ayrı model stratejisi benimsediğini gösteriyor:
+
+* Claude Fable 5, kurumsal kullanıcılar ve geliştiriciler için genel kullanıma açık, güçlü ancak güvenlik katmanlarıyla sınırlandırılmış bir modeldir.
+* Claude Mythos 5, özellikle siber güvenlik araştırmaları ve kritik altyapı güvenliği gibi yüksek riskli alanlara yönelik, aynı temel teknoloji üzerine inşa edilmiş ancak daha geniş yeteneklere sahip ve yalnızca güvenilir kuruluşlara sunulan özel bir modeldir.
+* Anthropic’in yaklaşımı, gelişmiş yapay zekâ yeteneklerini tamamen gizlemek yerine, bunları risk seviyesine göre farklı erişim ve güvenlik mekanizmalarıyla sunmak üzerine kuruludur.  
