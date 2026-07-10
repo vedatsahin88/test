@@ -1,1 +1,120 @@
-test
+3. Açık kaynak yazılımlar üzerindeki etkisi
+
+Anthropic yalnızca ticari şirketlerle çalışmadı.
+
+Program kapsamında:
+
+* Binlerce açık kaynak proje tarandı.
+* Açık kaynak geliştiricilerine sorumlu açıklama (Responsible Disclosure) süreçleriyle güvenlik raporları gönderildi.
+* Kritik altyapılarda kullanılan çok sayıda bileşenin güvenliği artırıldı.  
+
+⸻
+
+4. Yeni darboğaz: Doğrulama ve yama yönetimi
+
+Raporun en dikkat çekici tespiti şudur:
+
+Eskiden süreç şöyleydi:
+
+Kod
+   │
+İnsan güvenlik araştırmacısı
+   │
+Aylarca süren analiz
+   │
+Birkaç CVE
+
+Kod
+   │
+Claude Mythos
+   │
+Binlerce aday zafiyet
+   │
+İnsan doğrulaması
+   │
+Responsible Disclosure
+   │
+Patch
+
+Yani sorun artık zafiyet bulmak değil; bulunan çok sayıdaki adayın doğrulanması, ilgili üreticilere bildirilmesi ve güvenli şekilde yamalanmasıdır.  
+
+⸻
+
+5. Neden ayrıntılar paylaşılmıyor?
+
+Anthropic, bulunan açıkların teknik ayrıntılarını henüz yayımlamıyor.
+
+Bunun nedeni, Coordinated Vulnerability Disclosure (Koordineli Güvenlik Açığı Bildirimi) yaklaşımını benimsemesi.
+
+Genel süreç:
+
+* Zafiyet bulunur.
+* Yazılım üreticisi bilgilendirilir.
+* Yama hazırlanır.
+* Kullanıcılar güncelleme yapar.
+* Daha sonra teknik ayrıntılar kamuoyuyla paylaşılır.
+
+Bu yaklaşım, saldırganların yamalanmamış sistemleri hedef almasını önlemeyi amaçlıyor.  
+
+⸻
+
+6. Yazılım geliştiricilere öneriler
+
+Anthropic, geliştiricilere şu tavsiyelerde bulunuyor:
+
+* Güvenlik yamalarını daha hızlı hazırlayın.
+* Sürüm yayınlama döngülerini kısaltın.
+* Güncelleme süreçlerini kullanıcılar için kolaylaştırın.
+* AI araçlarını güvenli kod geliştirme süreçlerine entegre edin.
+
+Şirket, AI’nin yalnızca zafiyet bulmak için değil, yamaların hazırlanmasını hızlandırmak için de kullanılabileceğini vurguluyor.  
+
+⸻
+
+7. Sistem yöneticilerine öneriler
+
+Raporda sistem yöneticileri ve güvenlik ekipleri için de öneriler bulunuyor:
+
+* Patch test ve dağıtım sürelerini kısaltın.
+* Güvenlik temel kontrollerini (ör. ağ segmentasyonu, en az ayrıcalık ilkesi, çok faktörlü kimlik doğrulama) eksiksiz uygulayın.
+* Kritik yamaların dağıtımını hızlandırın.
+
+Anthropic, AI’nin saldırganların hızını artırdığı bir ortamda geleneksel yama süreçlerinin yeterli olmayabileceğini belirtiyor.  
+
+⸻
+
+8. Gelecek planları
+
+Anthropic, ilerleyen dönemde:
+
+* Daha fazla istatistik paylaşacağını,
+* Yamalanan açıkların teknik analizlerini yayımlayacağını,
+* Project Glasswing kapsamını genişleteceğini,
+* Mythos sınıfı modellerin güvenli biçimde nasıl kullanılabileceğine ilişkin deneyimlerini sektörle paylaşacağını açıklıyor.  
+
+⸻
+
+Siber güvenlik açısından en önemli çıkarımlar
+
+Bu rapor, özellikle zafiyet yönetimi (Vulnerability Management) açısından önemli bir paradigma değişikliğine işaret ediyor:
+
+Geleneksel yaklaşım
+
+AI destekli yaklaşım
+
+Darboğaz: Zafiyet bulma
+
+Darboğaz: Zafiyet doğrulama ve düzeltme
+
+İnsan araştırmacılar sınırlı sayıda açık bulur
+
+AI çok kısa sürede binlerce aday zafiyet üretir
+
+Haftalar veya aylar süren analiz
+
+Saatler veya günler içinde geniş kapsamlı tarama
+
+Düzeltme süreci daha yavaştır
+
+Patch yönetimi ve otomasyon kritik hale gelir
+
