@@ -1,0 +1,122 @@
+Anthropic’in “Redeploying Claude Fable 5” duyurusu, Fable 5’in neden geçici olarak erişime kapatıldığını, hangi güvenlik iyileştirmelerinin yapıldığını ve neden yeniden kullanıma sunulduğunu açıklıyor. Sayfanın özeti şu şekilde:
+
+⸻
+
+1. Fable 5 neden kapatıldı?
+
+Anthropic, 12 Haziran 2026’da ABD hükümetinin uyguladığı ihracat kontrolleri nedeniyle Claude Fable 5 ve Claude Mythos 5 modellerine erişimi durdurmak zorunda kaldı.
+
+Karar, yalnızca yabancı kullanıcıları hedefliyordu. Ancak Anthropic’in kullanıcıların vatandaşlığını anlık ve güvenilir şekilde doğrulayacak bir sistemi bulunmadığı için şirket, uyumluluğu sağlamak amacıyla her iki modeli de geçici olarak tüm kullanıcılar için devre dışı bıraktı.  
+
+⸻
+
+2. Neden tekrar kullanıma açıldı?
+
+30 Haziran 2026 itibarıyla ihracat kısıtlamaları kaldırıldı.
+
+Bunun ardından:
+
+* Claude Fable 5, Claude Platform, Claude.ai, Claude Code ve Claude Cowork üzerinden küresel olarak yeniden erişime açıldı.
+* Claude Mythos 5 ise yalnızca ABD hükümetince onaylanan belirli kuruluşlar için yeniden etkinleştirildi.
+* Anthropic, Project Glasswing kapsamındaki diğer güvenilir ortaklara erişimi kademeli olarak genişletmek için hükümetle çalışmaya devam ettiğini belirtti.  
+
+⸻
+
+3. Kapatılmaya neden olan güvenlik olayı
+
+Anthropic’e göre süreç, Amazon araştırmacılarının hazırladığı bir raporla başladı.
+
+Raporda:
+
+* Fable 5’in bazı güvenlik filtrelerinin belirli istemlerle aşılabildiği,
+* Modelin bazı yazılım açıklarını tanımlayabildiği,
+* Bir örnekte ise ilgili açığın nasıl istismar edilebileceğini gösteren örnek kod üretebildiği
+
+belirtildi.  
+
+⸻
+
+4. Anthropic’in değerlendirmesi
+
+Şirket bu bulguların önemli olduğunu kabul ediyor; ancak şu noktaların altını çiziyor:
+
+* Aynı güvenlik açıklarını daha düşük yetenekli modeller de tespit edebiliyordu.
+* GPT-5.5, Claude Opus 4.8 ve diğer bazı gelişmiş modeller de benzer çıktılar verebildi.
+* Söz konusu davranış, Mythos 5’e özgü ileri düzey saldırı kabiliyetlerini ortaya çıkarmıyordu; daha çok savunma amaçlı güvenlik analizlerinde görülebilecek sınır bir durumdu.  
+
+⸻
+
+5. Yapılan güvenlik iyileştirmeleri
+
+Anthropic, güvenlik mekanizmalarını güçlendirdiğini açıklıyor.
+
+Başlıca değişiklikler:
+
+* Yeni bir güvenlik sınıflandırıcısı (safety classifier) eğitildi.
+* Riskli istekler otomatik olarak engelleniyor.
+* Engellenen istekler daha düşük yetenekli Claude Opus 4.8 modeline yönlendiriliyor.
+* Kullanıcı, isteğinin neden yönlendirildiği konusunda bilgilendiriliyor.
+
+Bu sayede Fable 5’in güçlü yetenekleri korunurken riskli kullanım senaryoları daha etkin şekilde sınırlandırılıyor.  
+
+⸻
+
+6. Fable 5 ile Mythos 5 arasındaki fark
+
+Anthropic bu ayrımı özellikle vurguluyor:
+
+Claude Mythos 5
+
+* En yüksek siber güvenlik yeteneklerine sahip modeldir.
+* Yazılım açıklarını bulma ve istismar etme konusunda çok güçlüdür.
+* Bu nedenle yalnızca güvenilir kuruluşlara sunulur.
+
+Claude Fable 5
+
+* Aynı temel model ailesinden gelir.
+* Ancak kapsamlı güvenlik mekanizmalarıyla korunur.
+* Tehlikeli siber güvenlik isteklerini reddetmek veya sınırlamak üzere tasarlanmıştır.
+* Genel kullanıma sunulan sürümdür.  
+
+⸻
+
+7. “Defense in Depth” yaklaşımı
+
+Anthropic, tek bir güvenlik filtresine güvenmediğini belirtiyor.
+
+Fable 5’te birden fazla koruma katmanı birlikte çalışıyor:
+
+* Model eğitimiyle tehlikeli istekleri reddetme,
+* Güvenlik sınıflandırıcıları,
+* Kullanım davranışlarının sonradan analizi,
+* Şüpheli etkinliklerin tespiti,
+* Gerekirse isteğin daha güvenli bir modele yönlendirilmesi.
+
+Bu çok katmanlı yaklaşım (“defense in depth”), tek bir mekanizmanın aşılması durumunda diğer katmanların koruma sağlamasını amaçlıyor.  
+
+⸻
+
+8. Endüstri standardı çağrısı
+
+Anthropic, yalnızca kendi ürününü güncellemekle kalmayıp sektör genelinde ortak bir yaklaşım öneriyor.
+
+Şirket;
+
+* Amazon,
+* Microsoft,
+* Google
+* ve Project Glasswing ortaklarıyla birlikte,
+
+LLM’lerde güvenlik filtrelerinin ne kadar ciddi şekilde aşılabildiğini ölçmek için ortak bir “jailbreak severity” (güvenlik filtresi aşma şiddeti) değerlendirme standardı geliştirilmesini öneriyor.  
+
+⸻
+
+Dokümanın ana mesajı
+
+Bu duyurunun temel mesajı şudur:
+
+* Fable 5’in geçici olarak erişime kapatılmasının nedeni, modelin benzersiz saldırı yetenekleri değil; güvenlik filtrelerinin belirli senaryolarda aşılabildiğinin gösterilmesiydi.
+* Anthropic, yeni güvenlik sınıflandırıcıları ve çok katmanlı koruma mekanizmaları ekleyerek bu açığı kapattığını belirtiyor.
+* Şirket, Fable 5’in güvenli biçimde yeniden kullanıma sunulduğunu, ancak Mythos 5’in yüksek siber güvenlik yetenekleri nedeniyle hâlâ yalnızca güvenilir kuruluşlara açık olduğunu vurguluyor.  
+
+Bu içerik, hazırladığımız “Anthropic Mythos” bölümü için de önemli bir ek niteliğinde. Özellikle “Güvenlik Önlemleri (Safeguards)”, “Defense in Depth” ve “Mythos–Fable Karşılaştırması” başlıklarını güncellemek için kullanılabilecek değerli bilgiler içeriyor.
