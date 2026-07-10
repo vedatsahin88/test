@@ -1,0 +1,94 @@
+Bu sayfa, Anthropic’in ABD hükümetinden aldığı ihracat kontrolü talimatı nedeniyle Claude Fable 5 ve Claude Mythos 5 modellerine erişimi neden askıya aldığını açıklayan resmi duyurudur. Duyurunun ana mesajı, kararın Anthropic’in kendi tercihi değil, yasal bir zorunluluk olduğudur.  
+
+1. ABD hükümetinin talimatı
+
+Anthropic, ABD hükümetinden aldığı resmi ihracat kontrolü talimatı doğrultusunda:
+
+* Claude Fable 5
+* Claude Mythos 5
+
+modellerine ABD vatandaşı olmayan tüm kişilerin erişiminin durdurulmasının istendiğini açıklıyor.
+
+Talimat, yabancı kullanıcıların ABD içinde veya dışında bulunmasına bakılmaksızın uygulanacak şekilde düzenlenmiştir.  
+
+⸻
+
+2. Neden tüm kullanıcıların erişimi kesildi?
+
+İlk bakışta yalnızca yabancı kullanıcıların etkilenmesi beklenebilir.
+
+Ancak Anthropic şu sorunu vurguluyor:
+
+* Kullanıcıların vatandaşlığını gerçek zamanlı ve güvenilir şekilde doğrulamak mümkün değildi.
+* Yanlışlıkla yetkisiz erişim sağlanması ciddi hukuki sonuçlar doğurabilirdi.
+
+Bu nedenle şirket, mevzuata tam uyum sağlayabilmek için Fable 5 ve Mythos 5’i geçici olarak tüm müşteriler için devre dışı bıraktı.  
+
+⸻
+
+3. Hangi modeller etkilendi?
+
+Sadece iki model etkilendi:
+
+* Claude Fable 5
+* Claude Mythos 5
+
+Diğer Claude modelleri (örneğin Opus serisi ve daha önceki genel kullanım modelleri) çalışmaya devam etti ve hizmet kesintisinden etkilenmedi.  
+
+⸻
+
+4. Bunun nedeni neydi?
+
+Anthropic ayrıntılı teknik gerekçe vermese de kararın temelinde ulusal güvenlik bulunuyor.
+
+Özellikle Mythos 5’in;
+
+* kritik yazılım açıklarını bulabilmesi,
+* exploit geliştirmede çok güçlü olması,
+* siber saldırı kabiliyetlerini artırabilecek düzeyde yetenek göstermesi,
+
+ABD hükümetinin bu modeli ihracat kontrolü kapsamına almasına neden oldu. Fable 5 de aynı temel teknolojiye dayandığı için aynı kısıtlamaya dahil edildi.  
+
+⸻
+
+5. Anthropic’in kullanıcılarına mesajı
+
+Şirket şu noktaların altını çiziyor:
+
+* Bu karar Anthropic’in ticari tercihi değildir.
+* Yasal yükümlülük nedeniyle uygulanmaktadır.
+* Kullanıcılardan özür dilenmektedir.
+* Erişimi mümkün olan en kısa sürede yeniden sağlamak için hükümetle birlikte çalışılmaktadır.  
+
+⸻
+
+6. Sonrasında ne oldu?
+
+Bu duyuru, erişimin askıya alındığını açıklayan ilk bildiriydi.
+
+Daha sonra:
+
+* ABD hükümeti kısıtlamaları kaldırdı.
+* Claude Fable 5 yeniden küresel kullanıma açıldı.
+* Claude Mythos 5 ise yalnızca hükümet tarafından onaylanan belirli kuruluşlara yeniden sunuldu.  
+
+9 Haziran 2026
+│
+├── Claude Fable 5 yayınlandı
+├── Claude Mythos 5 sınırlı erişimle sunuldu
+│
+12 Haziran
+│
+├── ABD ihracat kontrolü kararı
+├── Fable 5 kapatıldı
+└── Mythos 5 kapatıldı
+│
+30 Haziran
+│
+├── Kısıtlamalar kaldırıldı
+│
+1 Temmuz
+│
+├── Fable 5 yeniden açıldı
+└── Mythos 5 sadece onaylı kuruluşlara açıldı
+
