@@ -1,0 +1,133 @@
+Bu sayfa, Project Glasswing’in ikinci fazını duyuran resmi açıklamadır. İlk duyuruda yaklaşık 50 kuruluştan oluşan pilot programın ardından Anthropic, programı küresel ölçekte genişlettiğini ve Claude Mythos Preview erişimini daha fazla savunma odaklı kuruluşa açtığını açıklıyor.  
+
+⸻
+
+Genel Bakış
+
+Anthropic’in temel mesajı şu:
+
+Yapay zekâ destekli siber saldırılar giderek güçleniyor. Savunma ekiplerinin bu tehditlere karşı koyabilmesi için en gelişmiş AI araçlarına saldırganlardan önce erişmesi gerekiyor. Bu nedenle Project Glasswing daha fazla güvenilir kuruluşa açılıyor.  
+
+⸻
+
+1. Project Glasswing neden genişletiliyor?
+
+Anthropic’e göre ilk pilot program oldukça başarılı oldu.
+
+Program kapsamında yer alan kuruluşlar:
+
+* kritik yazılımlarda çok sayıda yüksek öneme sahip güvenlik açığı buldu,
+* açık kaynak projelerinin güvenliğini artırdı,
+* AI’nin savunma amaçlı kullanımına yönelik önemli deneyimler kazandı.
+
+Bu olumlu sonuçların ardından programın kapsamı büyütüldü.  
+
+⸻
+
+2. Kapsam ne kadar büyüdü?
+
+İlk aşamada yaklaşık 50 kuruluş bulunuyordu.
+
+Yeni duyuruyla birlikte:
+
+* yaklaşık 150 yeni kuruluş programa davet edildi,
+* toplam katılımcı sayısı yaklaşık 200’e ulaştı,
+* katılımcılar 15’ten fazla ülkeden seçildi.  
+
+⸻
+
+3. Kimler katılabiliyor?
+
+Anthropic, programa rastgele başvuru kabul etmiyor.
+
+Katılacak kuruluşların:
+
+* güvenilir güvenlik ekiplerine sahip olması,
+* belirli güvenlik gereksinimlerini karşılaması,
+* modeli yalnızca savunma amaçlı kullanmayı taahhüt etmesi gerekiyor.
+
+Güvenlik doğrulaması tamamlanmadan erişim verilmiyor.  
+
+⸻
+
+4. Hangi sektörler öncelikli?
+
+Program artık yalnızca teknoloji şirketlerini değil, kritik altyapı işleten kuruluşları da kapsıyor.
+
+Öncelikli alanlar:
+
+* enerji,
+* telekomünikasyon,
+* sağlık,
+* finans,
+* kamu kurumları,
+* kritik altyapı işletmeleri,
+* açık kaynak yazılım toplulukları.
+
+Amaç, toplum için kritik sistemlerin güvenliğini artırmak.  
+
+⸻
+
+5. Claude Mythos nasıl kullanılıyor?
+
+Project Glasswing katılımcıları, Claude Mythos Preview modelini savunma amaçlı senaryolarda kullanıyor.
+
+Başlıca kullanım alanları:
+
+* kaynak kod analizi,
+* yazılım zafiyetlerinin bulunması,
+* kritik açıkların önceliklendirilmesi,
+* güvenlik incelemelerinin hızlandırılması,
+* güvenli kod geliştirme süreçlerinin desteklenmesi.
+
+Anthropic’in vurgusu, modelin saldırı üretmek için değil, yazılımları daha güvenli hâle getirmek için kullanılmasıdır.  
+
+⸻
+
+6. ABD hükümeti ile iş birliği
+
+Anthropic, genişleme sürecini tek başına yürütmediğini belirtiyor.
+
+Programın yeni aşaması;
+
+* mevcut Glasswing ortakları,
+* siber güvenlik sektörü,
+* açık kaynak toplulukları,
+* ABD hükümeti
+
+ile yapılan çalışmalar sonucunda şekillendirildi.  
+
+⸻
+
+7. Güvenlik yaklaşımı
+
+Anthropic’in önemli mesajlarından biri şu:
+
+Gelişmiş AI modelleri gelecekte saldırganların da eline geçecek. Savunma ekiplerinin hazırlıklı olabilmesi için bu teknolojilere kontrollü biçimde daha erken erişmesi gerekiyor.
+
+Bu nedenle Project Glasswing, “önce savunmacılar” yaklaşımıyla tasarlanmış bir program olarak tanımlanıyor.  
+
+⸻
+
+8. Gelecek planları
+
+Anthropic, genişlemenin bununla sınırlı olmadığını belirtiyor.
+
+İlerleyen dönemde öncelik verilecek gruplar:
+
+* daha fazla kritik altyapı işletmecisi,
+* ulusal siber güvenlik ekipleri,
+* güvenlik araştırma kuruluşları,
+* açık kaynak projelerini yöneten ekipler.
+
+Programın güvenlik şartlarını karşılayan yeni kuruluşlarla büyümeye devam etmesi hedefleniyor.  
+
+⸻
+
+Doküman açısından çıkarılabilecek temel mesajlar
+
+Bu duyuru, Project Glasswing’in yalnızca bir teknoloji tanıtımı olmadığını; AI destekli siber savunma için oluşturulmuş küresel bir iş birliği ekosistemi olduğunu gösteriyor. Anthropic’in stratejisi üç temel ilkeye dayanıyor:
+
+* Savunmacılara öncelik vermek: Gelişmiş AI yeteneklerini önce güvenilir savunma ekiplerine sunmak.
+* Kontrollü erişim: Claude Mythos’u herkese açmak yerine, güvenlik değerlendirmesinden geçen kuruluşlara sağlamak.
+* Toplumsal etki: Kritik altyapılar, açık kaynak projeleri ve temel yazılım bileşenlerinin güvenliğini artırarak geniş çaplı siber riskleri azaltmak.  
