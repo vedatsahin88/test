@@ -1,0 +1,595 @@
+Claude Mythos 5
+
+Claude Mythos 5, Anthropic tarafından geliştirilen ve özellikle siber güvenlik, biyoloji araştırmaları ve sağlık alanındaki ileri düzey araştırmalar için tasarlanmış en güçlü yapay zekâ modelidir. Model, genel kullanıma sunulan Claude modellerinden farklı olarak yalnızca güvenilir kuruluşlara kontrollü erişim kapsamında sağlanmaktadır.
+
+Duyurular ve Gelişmeler:
+
+Project Glasswing (7 Nisan 2026)
+Anthropic, dünyanın kritik yazılımlarının güvenliği artırmak amacıyla Project Glasswing isimli programı oluşturulmuştur. Yapay zekayı siber saldırılar için değil, savunma amaçlı kullanmayı hedefleyen küresel bir girişimdir. Projenin merkezinde henüz herkese açılmamış olan Claude Mythos Preview modeli bulunmaktadır.
+Amaç: Dünyanın en kritik yazılımlarındaki güvenlik açıklarını, kötü niyetli kişilerden önce tespit edip kapatmak. 
+Nasıl çalışıyor: Claude Mythos Preview, çok büyük kod tabanlarını analiz ederek zafiyetleri buluyor, yeniden üretebiliyor ve düzeltme önerileri sunabiliyor.
+Neden önemli: Anthropic’e göre yeni nesil AI modelleri artık güvenlik açıklarını bulma konusunda en yetenekli insan araştırmacılarla yarışabilecek seviyeye ulaştı. Bu nedenle savunma tarafının da aynı teknolojileri kullanması gerekiyor.
+Erişim neden kısıtlı: Modelin saldırı amacıyla da kullanılabilmesi riski bulunduğundan yalnızca güvenilir kuruluşlara kontrollü erişimler veriliyor.
+Destek: Anthropic, projeyi desteklemek için 100 milyon dolar kullanım kredisi ve açık kaynak güvenliği için 4 milyon dolar bağış ayırdığını açıklamıştır.
+Bu programa; Amazon, Apple, Google, Microsoft, NVIDIA, Cisco, CrowdStrike, Broadcom, Palo Alto Networks, Linux Foundation, JPMorganChase gibi büyük kuruluşlar katılmıştır.
+Program kapsamında AI modeli kullanılarak kritik yazılımlarda binlerce yüksek önem dereceli güvenlik açığı tespit edilmiştir.
+Projenin siber güvenlik açışından anlamı, klasik vulnerability management yaklaşımından farklı olarak;
+-	Zafiyet taramalarını büyük oranda otomatikleştirmektedir.
+-	Zero-day açıklarını çok daha hızlı şekilde keşfedebilmektedir.
+-	Güvenlik ekiplerini yalnızca zafiyet tespiti değil, doğrulama, önceliklendirme ve düzeltme süreçlerinde de destekleyen AI ajanlarının önünü açmaktadır.
+Antropic’in temel mesajı: Yapay zeka artık güvenlik açıklarını bulmada insan uzmanlardan çok daha hızlı hale geliyor. Artık temek darboğaz, zafiyetleri keşfetmek değil; bunları doğrulamak, ilgili geliştiricilere bildirmek ve yamaları zamanında yayınlamak.
+
+Project Glasswing
+İlk Sonuçlar (22 Mayıs 2026)
+
+1.	İlk bir ayda elde edilen sonuçlar
+
+	Yaklaşık 50 kuruluş programa katıldı.
+	Katılımcılar Claude Mythos Preview kullanarak çalıştı.
+	10.000’in üzerinde yüksek ve kritik seviyede güncelik açığı tespit edildi.
+
+2.	Güvenlik açığı bulma hızındaki artış
+Katılımcı kuruluşlar, yapay zeka sayesinde güvenlik araştırmalarının ciddi ölçüde hızlandığını bildirdi. Bazı ekiplerde güvenlik açığı bulma hızı 10 katın üzerinde arttı.
+Örnek olarak Cloudflare, kritik sistemlerinde yaklaşık 2.000 hata buldu. Bunların yaklaşık 400’ü yüksek ve kritik önem seviyesindeydi. (False positive oranının insan araştırmacılardan düşük olduğu ifade edilmiştir.)
+
+3.	 Açık kaynak yazılımlar üzerindeki etkisi
+Anthropic yalnızca ticari şirketlerle çalışmadı. Program kapsamında: 
+Binlerce açık kaynak proje tarandı.
+Açık kaynak geliştiricilerine sorumlu açıklama (Responsible Disclosure) süreçleriyle güvenlik raporları gönderildi.
+Kritik altyapılarda kullanılan çok sayıda bileşenin güvenliği artırıldı.  
+
+4.	 Yeni darboğaz: Doğrulama ve yama yönetimi
+Raporun en dikkat çekici tespiti şudur:
+
+Eskiden süreç şöyleydi:
+Kod -> İnsan güvenlik araştırmacısı -> Aylarca süren analiz -> Birkaç CVE
+Artık böyle:
+Kod -> Claude Mythos -> Binlerce aday zafiyet -> İnsan doğrulaması -> Responsible Disclosure -> Patch
+Yani sorun artık zafiyet bulmak değil; bulunan çok sayıdaki zafiyetin doğrulanması, ilgili üreticilere bildirilmesi ve güvenli şekilde yama çıkarılmasıdır.
+
+5.	Neden ayrıntılar paylaşılmıyor?
+
+Anthropic, bulunan açıkların teknik ayrıntılarını henüz paylaşmıyor. Bunun nedeni, Coordinated Vulnerability Disclosure (Koordineli Güvenlik Açığı Bildirimi) yaklaşımını benimsemesi.
+
+Genel süreç:
+•	Zafiyet bulunur.
+•	Yazılım üreticisi bilgilendirilir.
+•	Yama hazırlanır.
+•	Kullanıcılar güncelleme yapar.
+•	Daha sonra teknik ayrıntılar kamuoyuyla paylaşılır.
+Bu yaklaşım, saldırganların yama geçilmemiş sistemleri hedef almasını önlemeyi amaçlıyor.
+
+6.	 Gelecek planları
+Anthropic, ilerleyen dönemde:
+•	Daha fazla istatistik paylaşacağını,
+•	Yamalanan açıkların teknik analizlerini yayımlayacağını,
+•	Project Glasswing kapsamını genişleteceğini,
+•	Mythos sınıfı modellerin güvenli biçimde nasıl kullanılabileceğine ilişkin deneyimlerini sektörle paylaşacağını açıklıyor.  
+
+Siber güvenlik açısından en önemli çıkarımlar
+Geleneksel Yaklaşım	AI Destekli Yaklaşım
+Darboğaz: Zafiyet bulma	Darboğaz: Zafiyet doğrulama ve düzeltme
+İnsan araştırmacılar sınırlı sayıda açık bulur	AI çok kısa sürede binlerce aday zafiyet üretir
+Haftalar veya aylar süren analiz	Saatler veya günler içinde geniş kapsamlı tarama
+Düzeltme süreci daha yavaştır	Patch yönetimi ve otomasyon kritik hale gelir
+
+
+Project Glasswing Projesinin Genişletilmesi (Jun 2, 2026)
+İlk duyuruda yaklaşık 50 kuruluştan oluşan pilot programın ardından Anthropic, programı küresel ölçekte genişlettiğini ve Claude Mythos Preview erişimini daha fazla savunma odaklı kuruluşa açtığını açıklamıştır.
+
+1.	 Project Glasswing neden genişletiliyor?
+
+Anthropic’e göre ilk pilot program oldukça başarılı oldu.
+
+Program kapsamında yer alan kuruluşlar:
+•	Kritik yazılımlarda çok sayıda yüksek öneme sahip güvenlik açığı buldu,
+•	Açık kaynak projelerinin güvenliğini artırdı,
+•	AI’nin savunma amaçlı kullanımına yönelik önemli deneyimler kazandı.
+Bu olumlu sonuçların ardından programın kapsamı büyütüldü.
+
+2.	Kapsam ne kadar büyüdü?
+
+İlk aşamada yaklaşık 50 kuruluş bulunuyordu.
+Yeni duyuruyla birlikte:
+•	yaklaşık 150 yeni kuruluş programa davet edildi,
+•	toplam katılımcı sayısı yaklaşık 200’e ulaştı,
+•	katılımcılar 15’ten fazla ülkeden seçildi.
+
+3.	 Kimler katılabiliyor?
+Anthropic, programa rastgele başvuru kabul etmiyor.
+Katılacak kuruluşların:
+
+•	güvenilir güvenlik ekiplerine sahip olması,
+•	belirli güvenlik gereksinimlerini karşılaması,
+•	modeli yalnızca savunma amaçlı kullanmayı taahhüt etmesi gerekiyor.
+Güvenlik doğrulaması tamamlanmadan erişim verilmiyor.  
+
+4.	 Hangi sektörler öncelikli?
+
+Program artık yalnızca teknoloji şirketlerini değil, kritik altyapı işleten kuruluşları da kapsıyor.
+
+Öncelikli alanlar:
+•	enerji,
+•	telekomünikasyon,
+•	sağlık,
+•	finans,
+•	kamu kurumları,
+•	kritik altyapı işletmeleri,
+•	açık kaynak yazılım toplulukları.
+
+Amaç, toplum için kritik sistemlerin güvenliğini artırmak.  
+
+5.	  Claude Mythos nasıl kullanılıyor?
+Project Glasswing katılımcıları, Claude Mythos Preview modelini savunma amaçlı senaryolarda kullanıyor.
+Başlıca kullanım alanları:
+•	kaynak kod analizi,
+•	yazılım zafiyetlerinin bulunması,
+•	kritik açıkların önceliklendirilmesi,
+•	güvenlik incelemelerinin hızlandırılması,
+•	güvenli kod geliştirme süreçlerinin desteklenmesi.
+
+Anthropic’in vurgusu, modelin saldırı üretmek için değil, yazılımları daha güvenli hâle getirmek için kullanılmasıdır.
+
+6.	 ABD hükümeti ile iş birliği
+
+Anthropic, genişleme sürecini tek başına yürütmediğini belirtiyor.
+
+Programın yeni aşaması;
+
+•	mevcut Glasswing ortakları,
+•	siber güvenlik sektörü,
+•	açık kaynak toplulukları,
+•	ABD hükümeti
+
+ile yapılan çalışmalar sonucunda şekillendirildi.
+
+7.	Gelecek planları
+
+Anthropic, genişlemenin bununla sınırlı olmadığını belirtiyor.
+
+İlerleyen dönemde öncelik verilecek gruplar:
+
+•	daha fazla kritik altyapı işletmecisi,
+•	ulusal siber güvenlik ekipleri,
+•	güvenlik araştırma kuruluşları,
+•	açık kaynak projelerini yöneten ekipler.
+
+Programın güvenlik şartlarını karşılayan yeni kuruluşlarla büyümeye devam etmesi hedefleniyor.
+
+Claude Mythos 5 (9 Haziran 2026)
+
+Anthropic, 9 Haziran 2026’da iki yeni modeli aynı anda tanıttı:
+
+* Claude Fable 5 → Genel kullanıma açık sürüm
+* Claude Mythos 5 → Sadece onaylı kuruluşlara sunulan, siber güvenlik odaklı sürüm
+
+Şirketin temel mesajı şu:
+
+Her iki model de aynı nesil teknolojiye dayanıyor. Ancak Mythos 5, yüksek riskli siber güvenlik yetenekleri nedeniyle sınırlı erişimle sunulurken, Fable 5 gelişmiş güvenlik önlemleriyle herkesin kullanımına açılıyor.
+
+1. Fable 5 ve Mythos 5’in temel amacı
+
+Anthropic’e göre yeni modeller önceki Claude nesillerine göre özellikle şu alanlarda büyük ilerleme sağlıyor:
+
+* Yazılım geliştirme
+* Kod analizi
+* Uzun süreli otonom görevler
+* Karmaşık problem çözme
+* Araştırma ve bilgi işleme
+* Görsel analiz
+* Hafıza ve uzun bağlam yönetimi
+* Yaşam bilimleri araştırmaları
+
+Özellikle modelin uzun süre insan müdahalesi olmadan çok adımlı görevleri sürdürebilmesi önemli bir yenilik olarak öne çıkarılıyor.  
+
+2. Yazılım mühendisliğinde önemli gelişmeler
+
+Anthropic, en büyük gelişmenin yazılım geliştirme tarafında olduğunu vurguluyor.
+
+Model artık:
+
+* Büyük kod tabanlarını analiz edebiliyor.
+* Binlerce dosyayı ilişkilendirebiliyor.
+* Refactoring yapabiliyor.
+* Karmaşık hata ayıklama süreçlerini yönetebiliyor.
+* Yeni özellik geliştirebiliyor.
+* Test senaryoları oluşturabiliyor.
+
+Bu özellikler özellikle büyük kurumsal yazılım projeleri için hedeflenmiş durumda.  
+
+
+3. Daha uzun otonom çalışma
+
+Önceki Claude modellerine göre Fable 5 ve Mythos 5:
+
+* Daha uzun süre plan yapabiliyor.
+* Çok adımlı görevleri takip edebiliyor.
+* Ara sonuçları hatırlayabiliyor.
+* Hatalarını düzelterek ilerleyebiliyor.
+
+Anthropic bunu “autonomous work” (otonom çalışma) yeteneği olarak tanımlıyor.  
+
+
+4. Görsel analiz (Vision)
+
+Yeni modeller yalnızca metin değil;
+
+* ekran görüntülerini,
+* diyagramları,
+* grafik ve tabloları,
+* teknik dokümanları
+
+çok daha başarılı analiz edebiliyor.
+
+Bu yetenek özellikle yazılım geliştirme ve teknik incelemeler için geliştirilmiş.  
+
+
+5. Uzun bağlam (Long Context)
+
+Anthropic, modellerin büyük miktarda veriyi aynı anda işleyebildiğini belirtiyor.
+
+Örneğin:
+
+* yüzlerce sayfalık teknik doküman,
+* büyük kaynak kod depoları,
+* log dosyaları,
+* sistem konfigürasyonları
+
+tek oturumda analiz edilebiliyor.  
+
+
+6. Yaşam bilimleri araştırmaları
+
+Modeller yalnızca yazılım için geliştirilmedi.
+
+Anthropic;
+
+* biyoloji,
+* sağlık,
+* ilaç geliştirme,
+* bilimsel araştırmalar
+
+alanlarında da önemli performans artışları olduğunu belirtiyor.
+
+Ancak bu alanlar da güvenlik açısından hassas kabul edildiği için Mythos sürümüne ek erişim kontrolleri uygulanıyor.  
+
+
+7. Fable 5 ile Mythos 5 arasındaki temel fark
+
+Bu sayfanın en önemli kısmı burasıdır.
+
+Anthropic’e göre:
+
+Claude Mythos 5
+
+* En yüksek siber güvenlik yeteneklerine sahiptir.
+* Kritik yazılım açıklarını bulabilir.
+* Exploit geliştirme konusunda daha gelişmiştir.
+* Güvenlik araştırmalarında kullanılmak üzere tasarlanmıştır.
+* Yalnızca Project Glasswing kapsamındaki onaylı kuruluşlara sunulur.
+
+
+Claude Fable 5
+
+* Aynı temel model ailesini kullanır.
+* Günlük kullanım için tasarlanmıştır.
+* Zararlı olabilecek siber güvenlik, biyoloji ve sağlık taleplerinde güvenlik mekanizmaları devreye girer.
+* Gerekirse bazı istekler daha güvenli bir modele yönlendirilir.
+
+Anthropic, Fable 5’in “Mythos sınıfı yetenekleri güvenlik önlemleriyle sunan model” olduğunu ifade ediyor.  
+
+
+8. Güvenlik (Safeguards)
+
+Fable 5’in en önemli özelliği, yerleşik güvenlik katmanlarıdır.
+
+Riskli görülen istemlerde:
+
+* İstek analiz edilir.
+* Güvenlik sınıflandırıcısı çalışır.
+* Gerekirse istek reddedilir.
+* Alternatif olarak daha düşük yetenekli bir modele yönlendirilir.
+
+Bu sayede genel kullanıcılar güçlü modelden yararlanırken yüksek riskli kullanım senaryoları sınırlandırılır.  
+
+
+9. Benchmark Sonuçları
+
+Sayfada, Fable 5 ve Mythos 5’in diğer önde gelen modellerle karşılaştırıldığı benchmark tabloları yer alıyor.
+
+Anthropic özellikle şu alanlarda üstün performans iddia ediyor:
+
+* Yazılım geliştirme
+* Kod üretimi
+* Otonom görev tamamlama
+* Bilgi işleme
+* Bilimsel araştırma
+* Görsel analiz
+
+Mythos 5, siber güvenlik değerlendirmelerinde en yüksek performansı gösteren sürüm olarak konumlandırılıyor.  
+
+
+10. Fiyatlandırma
+
+Her iki model için API fiyatlandırması aynıdır:
+
+* Giriş (Input): 1 milyon token başına 10 ABD doları
+* Çıkış (Output): 1 milyon token başına 50 ABD doları
+
+Ancak Mythos 5 herkese açık olmadığı için bu fiyat yalnızca erişim hakkı bulunan kuruluşlar için geçerlidir.  
+
+Claude Mythos 5 is currently unavailable (12 Haziran 2026)
+
+Bu sayfa, Anthropic’in ABD hükümetinden aldığı ihracat kontrolü talimatı nedeniyle Claude Fable 5 ve Claude Mythos 5 modellerine erişimi neden askıya aldığını açıklayan resmi duyurudur. Duyurunun ana mesajı, kararın Anthropic’in kendi tercihi değil, yasal bir zorunluluk olduğudur.  
+
+1. ABD hükümetinin talimatı
+
+Anthropic, ABD hükümetinden aldığı resmi ihracat kontrolü talimatı doğrultusunda:
+
+* Claude Fable 5
+* Claude Mythos 5
+
+modellerine ABD vatandaşı olmayan tüm kişilerin erişiminin durdurulmasının istendiğini açıklıyor.
+
+Talimat, yabancı kullanıcıların ABD içinde veya dışında bulunmasına bakılmaksızın uygulanacak şekilde düzenlenmiştir.  
+
+
+2. Neden tüm kullanıcıların erişimi kesildi?
+
+İlk bakışta yalnızca yabancı kullanıcıların etkilenmesi beklenebilir.
+
+Ancak Anthropic şu sorunu vurguluyor:
+
+* Kullanıcıların vatandaşlığını gerçek zamanlı ve güvenilir şekilde doğrulamak mümkün değildi.
+* Yanlışlıkla yetkisiz erişim sağlanması ciddi hukuki sonuçlar doğurabilirdi.
+
+Bu nedenle şirket, mevzuata tam uyum sağlayabilmek için Fable 5 ve Mythos 5’i geçici olarak tüm müşteriler için devre dışı bıraktı.  
+
+
+3. Hangi modeller etkilendi?
+
+Sadece iki model etkilendi:
+
+* Claude Fable 5
+* Claude Mythos 5
+
+Diğer Claude modelleri (örneğin Opus serisi ve daha önceki genel kullanım modelleri) çalışmaya devam etti ve hizmet kesintisinden etkilenmedi.  
+
+
+4. Bunun nedeni neydi?
+
+Anthropic ayrıntılı teknik gerekçe vermese de kararın temelinde ulusal güvenlik bulunuyor.
+
+Özellikle Mythos 5’in;
+
+* kritik yazılım açıklarını bulabilmesi,
+* exploit geliştirmede çok güçlü olması,
+* siber saldırı kabiliyetlerini artırabilecek düzeyde yetenek göstermesi,
+
+ABD hükümetinin bu modeli ihracat kontrolü kapsamına almasına neden oldu. Fable 5 de aynı temel teknolojiye dayandığı için aynı kısıtlamaya dahil edildi.  
+
+
+5. Anthropic’in kullanıcılarına mesajı
+
+Şirket şu noktaların altını çiziyor:
+
+* Bu karar Anthropic’in ticari tercihi değildir.
+* Yasal yükümlülük nedeniyle uygulanmaktadır.
+* Kullanıcılardan özür dilenmektedir.
+* Erişimi mümkün olan en kısa sürede yeniden sağlamak için hükümetle birlikte çalışılmaktadır.  
+
+
+6. Sonrasında ne oldu?
+
+Bu duyuru, erişimin askıya alındığını açıklayan ilk bildiriydi.
+
+Daha sonra:
+
+* ABD hükümeti kısıtlamaları kaldırdı.
+* Claude Fable 5 yeniden küresel kullanıma açıldı.
+* Claude Mythos 5 ise yalnızca hükümet tarafından onaylanan belirli kuruluşlara yeniden sunuldu.  
+
+9 Haziran 2026
+│
+├── Claude Fable 5 yayınlandı
+├── Claude Mythos 5 sınırlı erişimle sunuldu
+│
+12 Haziran
+│
+├── ABD ihracat kontrolü kararı
+├── Fable 5 kapatıldı
+└── Mythos 5 kapatıldı
+│
+30 Haziran
+│
+├── Kısıtlamalar kaldırıldı
+│
+1 Temmuz
+│
+├── Fable 5 yeniden açıldı
+└── Mythos 5 sadece onaylı kuruluşlara açıldı
+
+Claude Mythos 5 export controls have been lifted (1 Temmuz 2026)
+Anthropic’in “Redeploying Claude Fable 5” duyurusu, Fable 5’in neden geçici olarak erişime kapatıldığını, hangi güvenlik iyileştirmelerinin yapıldığını ve neden yeniden kullanıma sunulduğunu açıklıyor. Sayfanın özeti şu şekilde:
+
+
+1. Fable 5 neden kapatıldı?
+
+Anthropic, 12 Haziran 2026’da ABD hükümetinin uyguladığı ihracat kontrolleri nedeniyle Claude Fable 5 ve Claude Mythos 5 modellerine erişimi durdurmak zorunda kaldı.
+
+Karar, yalnızca yabancı kullanıcıları hedefliyordu. Ancak Anthropic’in kullanıcıların vatandaşlığını anlık ve güvenilir şekilde doğrulayacak bir sistemi bulunmadığı için şirket, uyumluluğu sağlamak amacıyla her iki modeli de geçici olarak tüm kullanıcılar için devre dışı bıraktı.  
+
+
+2. Neden tekrar kullanıma açıldı?
+
+30 Haziran 2026 itibarıyla ihracat kısıtlamaları kaldırıldı.
+
+Bunun ardından:
+
+* Claude Fable 5, Claude Platform, Claude.ai, Claude Code ve Claude Cowork üzerinden küresel olarak yeniden erişime açıldı.
+* Claude Mythos 5 ise yalnızca ABD hükümetince onaylanan belirli kuruluşlar için yeniden etkinleştirildi.
+* Anthropic, Project Glasswing kapsamındaki diğer güvenilir ortaklara erişimi kademeli olarak genişletmek için hükümetle çalışmaya devam ettiğini belirtti.  
+
+
+3. Kapatılmaya neden olan güvenlik olayı
+
+Anthropic’e göre süreç, Amazon araştırmacılarının hazırladığı bir raporla başladı.
+
+Raporda:
+
+* Fable 5’in bazı güvenlik filtrelerinin belirli istemlerle aşılabildiği,
+* Modelin bazı yazılım açıklarını tanımlayabildiği,
+* Bir örnekte ise ilgili açığın nasıl istismar edilebileceğini gösteren örnek kod üretebildiği
+
+belirtildi.  
+
+
+4. Anthropic’in değerlendirmesi
+
+Şirket bu bulguların önemli olduğunu kabul ediyor; ancak şu noktaların altını çiziyor:
+
+* Aynı güvenlik açıklarını daha düşük yetenekli modeller de tespit edebiliyordu.
+* GPT-5.5, Claude Opus 4.8 ve diğer bazı gelişmiş modeller de benzer çıktılar verebildi.
+* Söz konusu davranış, Mythos 5’e özgü ileri düzey saldırı kabiliyetlerini ortaya çıkarmıyordu; daha çok savunma amaçlı güvenlik analizlerinde görülebilecek sınır bir durumdu.  
+
+
+5. Yapılan güvenlik iyileştirmeleri
+
+Anthropic, güvenlik mekanizmalarını güçlendirdiğini açıklıyor.
+
+Başlıca değişiklikler:
+
+* Yeni bir güvenlik sınıflandırıcısı (safety classifier) eğitildi.
+* Riskli istekler otomatik olarak engelleniyor.
+* Engellenen istekler daha düşük yetenekli Claude Opus 4.8 modeline yönlendiriliyor.
+* Kullanıcı, isteğinin neden yönlendirildiği konusunda bilgilendiriliyor.
+
+Bu sayede Fable 5’in güçlü yetenekleri korunurken riskli kullanım senaryoları daha etkin şekilde sınırlandırılıyor.  
+
+
+6. Fable 5 ile Mythos 5 arasındaki fark
+
+Anthropic bu ayrımı özellikle vurguluyor:
+
+Claude Mythos 5
+
+* En yüksek siber güvenlik yeteneklerine sahip modeldir.
+* Yazılım açıklarını bulma ve istismar etme konusunda çok güçlüdür.
+* Bu nedenle yalnızca güvenilir kuruluşlara sunulur.
+
+Claude Fable 5
+
+* Aynı temel model ailesinden gelir.
+* Ancak kapsamlı güvenlik mekanizmalarıyla korunur.
+* Tehlikeli siber güvenlik isteklerini reddetmek veya sınırlamak üzere tasarlanmıştır.
+* Genel kullanıma sunulan sürümdür.  
+
+
+7. “Defense in Depth” yaklaşımı
+
+Anthropic, tek bir güvenlik filtresine güvenmediğini belirtiyor.
+
+Fable 5’te birden fazla koruma katmanı birlikte çalışıyor:
+
+* Model eğitimiyle tehlikeli istekleri reddetme,
+* Güvenlik sınıflandırıcıları,
+* Kullanım davranışlarının sonradan analizi,
+* Şüpheli etkinliklerin tespiti,
+* Gerekirse isteğin daha güvenli bir modele yönlendirilmesi.
+
+Bu çok katmanlı yaklaşım (“defense in depth”), tek bir mekanizmanın aşılması durumunda diğer katmanların koruma sağlamasını amaçlıyor.  
+
+8. Endüstri standardı çağrısı
+
+Anthropic, yalnızca kendi ürününü güncellemekle kalmayıp sektör genelinde ortak bir yaklaşım öneriyor.
+
+Şirket;
+
+* Amazon,
+* Microsoft,
+* Google
+* ve Project Glasswing ortaklarıyla birlikte,
+
+LLM’lerde güvenlik filtrelerinin ne kadar ciddi şekilde aşılabildiğini ölçmek için ortak bir “jailbreak severity” (güvenlik filtresi aşma şiddeti) değerlendirme standardı geliştirilmesini öneriyor.  
+
+Bu duyurunun temel mesajı şudur:
+
+* Fable 5’in geçici olarak erişime kapatılmasının nedeni, modelin benzersiz saldırı yetenekleri değil; güvenlik filtrelerinin belirli senaryolarda aşılabildiğinin gösterilmesiydi.
+* Anthropic, yeni güvenlik sınıflandırıcıları ve çok katmanlı koruma mekanizmaları ekleyerek bu açığı kapattığını belirtiyor.
+* Şirket, Fable 5’in güvenli biçimde yeniden kullanıma sunulduğunu, ancak Mythos 5’in yüksek siber güvenlik yetenekleri nedeniyle hâlâ yalnızca güvenilir kuruluşlara açık olduğunu vurguluyor.
+
+
+
+
+
+
+
+
+
+
+Erişebilirlik
+
+Claude Mythos 5 herkese açık değildir. Şu anda erişim;
+•	güvenlik araştırmaları
+•	biyoloji araştırma kuruluşları
+•	güvenilir partnerler 
+ile sınırlıdır.
+
+Anthropic ilerleyen dönemde bu erişimi kontrollü şekilde genişletmeyi hedeflemektedir.
+
+Fiyatlandırma
+
+API fiyatlandırması:
+•	Giriş(Input): 1 milyon token başına 10 USD
+•	Çıkış(Output): 1 milyon token başına 50 USD
+
+Güvenlik Yaklaşımı
+
+Anthropic'in en fazla önem verdiği bölümdür. Şirket, Mythos 5'in olağanüstü güçlü olmasının hem fayda hem de risk oluşturduğunu belirtmektedir.
+
+Model;
+•	güvenlik açıklarını bulabilir
+•	zararlı yazılım analiz edebilir
+•	exploit geliştirmeye yardımcı olabilir
+•	biyolojik araştırmaları hızlandırabilir
+
+Bu yetenekler savunma amaçlı kullanılabileceği gibi kötü niyetli kişiler tarafından da istismar edilebilir. Bu nedenle Mythos herkese açılmamıştır.
+
+Claude Fable 5 ile İlişkisi
+
+Claude Fable 5 ile Claude Mythos 5 aslında aynı temel modeli kullanmaktadır.
+Aralarındaki temel fark:
+
+Claude Fable 5
+•	Güvenlik sınıflandırıcıları içerir.
+•	Riskli istekleri reddedebilir.
+•	Siber güvenlik ve biyoloji alanlarındaki bazı talepleri engeller veya sınırlandırır.
+
+Claude Mythos 5
+•	Aynı çekirdek modele sahiptir.
+•	Güvenlik sınırlandırıcıları içermez
+•	Daha geniş yeteneklere sahiptir.
+•	Sadece güvenilir kuruluşlara verilir.
+
+Ek Koruma Mekanizmaları
+
+Anthropic, Mythos seviyesindeki yetenekleri güvenli şekilde sunabilmek için çeşitli önlemler uygulamaktadır.
+
+Bunlar arasında;
+•	ek güvenlik filtreleri
+•	davranış analizleri
+•	zararlı kullanım tespit sistemleri
+•	kapsamlı güvenlik testleri
+•	güvenilir kullanıcı programları
+yer almaktadır.
+
+
+Veri Saklama Politikası
+
+Mythos kullanabilmek için kullanıcıların 30 günlük veri saklama politikasını kabul etmesi gerekmektedir. 
+Bu kayıtlar güvenlik incelemeleri amacıyla tutulmaktadır.
+
+Performans (Benchmarks)
+Anthropic’e göre Mythos 5; siber güvenlik, biyoloji araştırmaları ve sağlık araştırmaları alanlarında mev cut en başarılı model olarak gösterilmektedir.
+ 
+
