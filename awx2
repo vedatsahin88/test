@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+"""SMTP relay uzerinden STARTTLS/AUTH kullanmadan guvenli-icerikli test e-postasi.
+
+Yalnizca izinli kurum ici SMTP relay ortami icin kullanin.
+"""
+
+import smtplib
+import socket
+import sys
+from datetime import datetime, timezone
+from email.message import EmailMessage
+from email.utils import parseaddr
+
+SMTP_HOST = "smtp.tc.gov.tr"
+SMTP_PORT = 25
+SMTP_TIMEOUT = 15
+
+
+def ask_email(label):
+    value = input(f"{label}: ").strip()
+    name, address = parseaddr(value)
+    if name or not address or address != value or "@" not in address:
+        raise ValueError(f"Gecersiz e-posta adresi: {label}")
+    if any(c in value for c in ("\r", "\n", " ", "\t")):
+        raise ValueError("E-posta adresinde bosluk veya satir sonu olamaz")
+    return value
+
+
+def main():
+    print("AWX - SMTP e-posta gonderim testi (STARTTLS ve AUTH yok)")
+    print(f"SMTP: {SMTP_HOST}:{SMTP_PORT}")
+    print("Yalnizca kurumun izin verdigi gonderen ve alici adreslerini kullanin.\n")
+    sender = ask_email("Gonderen (From)")
+    recipient = ask_email("Alici (To)")
+
+    msg = EmailMessage()
+    msg["From"] = sender
+    msg["To"] = recipient
+    msg["Subject"] = "AWX SMTP TEST - Job 30272"
+    msg.set_content(
+        "AWX merkezi hata bildirim sistemi - SMTP gonderim testi.\n\n"
+        "Bu mesaj RHEL test sunucusundan SMTP port 25 uzerinden\n"
+        "STARTTLS ve AUTH kullanilmadan gonderilmistir.\n"
+        "Bu bir testtir; gercek Job hata verisi bulunmaz.\n\n"
+        "Referans Job ID: 30272\n"
+        f"Test zamani (UTC): {datetime.now(timezone.utc):%Y-%m-%d %H:%M:%S}\n"
+    )
+
+    print("\nSMTP sunucusuna baglaniliyor...")
+    try:
+        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=SMTP_TIMEOUT) as smtp:
+            smtp.ehlo()
+            # Bilerek starttls() ve login() cagirmiyoruz.
+            refused = smtp.send_message(msg)
+            if refused:
+                print("HATA: Bazi alicilar SMTP tarafindan reddedildi:", refused)
+                return 1
+        print("BASARILI: SMTP sunucusu mesaji teslim almak uzere kabul etti.")
+        print("Not: Bu, e-postanin gelen kutusuna kesin ulastigi anlamina gelmez.")
+        return 0
+    except smtplib.SMTPResponseException as exc:
+        print(f"SMTP HATASI: {exc.smtp_code} - {exc.smtp_error.decode(errors='replace') if isinstance(exc.smtp_error, bytes) else exc.smtp_error}")
+    except (smtplib.SMTPException, OSError, socket.timeout) as exc:
+        print(f"BAGLANTI/GONDERIM HATASI: {exc}")
+    return 1
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main())
+    except (ValueError, EOFError, KeyboardInterrupt) as exc:
+        print(f"\nIslem iptal edildi: {exc}")
+        sys.exit(1)
