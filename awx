@@ -1,0 +1,104 @@
+#!/usr/bin/env python3
+"""AWX Job 30272 icin basarisiz task eventlerini salt-okunur olarak goruntuler."""
+
+import getpass
+import json
+import urllib.error
+import urllib.request
+from urllib.parse import urlsplit
+
+AWX_URL = "https://awx.tcmb.gov.tr"
+JOB_ID = 30272
+ALLOWED_EVENTS = "runner_on_failed,runner_on_unreachable,runner_item_on_failed"
+
+
+def api_get(path, token):
+    # API'nin dondugu next adreslerinin baska bir domaine yonelmesini engelle.
+    if path.startswith("http://") or path.startswith("https://"):
+        parts = urlsplit(path)
+        base = urlsplit(AWX_URL)
+        if parts.scheme != "https" or parts.netloc != base.netloc:
+            raise ValueError("Beklenmeyen API adresi")
+        path = parts.path + ("?" + parts.query if parts.query else "")
+
+    if not path.startswith("/api/v2/"):
+        raise ValueError("Beklenmeyen API yolu")
+
+    request = urllib.request.Request(
+        AWX_URL + path,
+        headers={
+            "Authorization": "Bearer " + token,
+            "Accept": "application/json",
+        },
+    )
+
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return json.load(response)
+
+
+def main():
+    token = getpass.getpass("AWX API Token: ")
+    if not token:
+        print("HATA: Token bos olamaz.")
+        return
+
+    try:
+        job = api_get(f"/api/v2/jobs/{JOB_ID}/", token)
+        print("\n=== AWX JOB BILGILERI ===")
+        print("Job ID:", job.get("id"))
+        print("Job Name:", job.get("name"))
+        print("Status:", job.get("status"))
+
+        path = (
+            f"/api/v2/jobs/{JOB_ID}/job_events/"
+            f"?event__in={ALLOWED_EVENTS}&page_size=100"
+        )
+        total = 0
+        print("\n=== HATA KAYITLARI ===")
+
+        while path:
+            events = api_get(path, token)
+            results = events.get("results") or []
+            total += len(results)
+
+            for event in results:
+                data = event.get("event_data") or {}
+                result = data.get("res") or {}
+                if not isinstance(result, dict):
+                    result = {}
+
+                host = event.get("host_name") or data.get("host") or "Bilinmiyor"
+                task = event.get("task") or data.get("task") or "Bilinmiyor"
+                play = event.get("play") or data.get("play") or "Bilinmiyor"
+
+                print("\n---------------------")
+                print("Host:", host)
+                print("Play:", play)
+                print("Task:", task)
+                print("Event:", event.get("event"))
+
+                if result.get("censored") or result.get("_ansible_no_log"):
+                    print("Hata: no_log nedeniyle gizli")
+                else:
+                    message = (
+                        result.get("msg")
+                        or result.get("stderr")
+                        or result.get("exception")
+                        or "Detay bulunamadi"
+                    )
+                    print("Hata:", str(message)[:1000])
+
+            path = events.get("next")
+
+        print("\nToplam hata kaydi:", total)
+
+    except urllib.error.HTTPError as exc:
+        print("HTTP HATASI:", exc.code)
+    except urllib.error.URLError as exc:
+        print("BAGLANTI HATASI:", exc.reason)
+    except (ValueError, json.JSONDecodeError) as exc:
+        print("API YANIT HATASI:", exc)
+
+
+if __name__ == "__main__":
+    main()
