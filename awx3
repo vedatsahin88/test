@@ -1,0 +1,206 @@
+#!/usr/bin/env python3
+"""AWX Job hata raporu: API'den oku, onizle, istege bagli tek e-posta gonder.
+
+Python 3.9 ve yalnizca standart kutuphane. Test amaclidir; webhook servisi degildir.
+SMTP 25 uzerinden TLS olmadan iletim kurum politikasi izin veriyorsa kullanilmalidir.
+"""
+import argparse
+import getpass
+import html
+import json
+import re
+import smtplib
+import sys
+import urllib.error
+import urllib.request
+from email.message import EmailMessage
+from email.utils import parseaddr
+from urllib.parse import urlsplit
+
+AWX_BASE = "https://awx.tcmb.gov.tr"
+SMTP_HOST = "smtp.tc.gov.tr"
+SMTP_PORT = 25
+EVENTS = "runner_on_failed,runner_on_unreachable,runner_item_on_failed"
+MAX_EVENTS = 200
+
+
+def api_get(path, token):
+    base = urlsplit(AWX_BASE)
+    if path.startswith("http://") or path.startswith("https://"):
+        page = urlsplit(path)
+        if page.scheme != "https" or page.netloc != base.netloc:
+            raise ValueError("API sayfalama adresi beklenmeyen sunucuya yoneldi")
+        path = page.path + ("?" + page.query if page.query else "")
+    if not path.startswith("/api/v2/"):
+        raise ValueError("Beklenmeyen AWX API yolu")
+    request = urllib.request.Request(
+        AWX_BASE + path,
+        headers={"Authorization": "Bearer " + token, "Accept": "application/json"},
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return json.load(response)
+
+
+def clean(value, limit=1500):
+    text = str(value if value is not None else "")
+    # Genel gizli bilgi anahtarlarini maskele (kusursuz bir veri sizintisi engeli degildir).
+    text = re.sub(
+        r'(?i)\b(password|passwd|token|secret|api[_-]?key|authorization)\b'
+        r'\s*[:=]\s*([^\s,;]+)',
+        lambda m: m.group(1) + "=[GIZLENDI]",
+        text,
+    )
+    return text[:limit]
+
+
+def collect(job_id, token):
+    job = api_get(f"/api/v2/jobs/{job_id}/", token)
+    if job.get("id") != job_id:
+        raise ValueError("API Job ID uyusmazligi")
+    path = (
+        f"/api/v2/jobs/{job_id}/job_events/"
+        f"?event__in={EVENTS}&page_size=100&order_by=counter"
+    )
+    rows = []
+    while path:
+        page = api_get(path, token)
+        for event in page.get("results") or []:
+            if len(rows) >= MAX_EVENTS:
+                return job, rows, True
+            data = event.get("event_data") or {}
+            result = data.get("res") or {}
+            if not isinstance(result, dict):
+                result = {}
+            is_censored = bool(result.get("censored") or result.get("_ansible_no_log"))
+            message = "no_log nedeniyle gizlendi" if is_censored else (
+                result.get("msg") or result.get("stderr")
+                or result.get("exception") or "Detay bulunamadi"
+            )
+            rows.append({
+                "host": clean(event.get("host_name") or data.get("host") or "Bilinmiyor", 160),
+                "play": clean(event.get("play") or data.get("play") or "Bilinmiyor", 180),
+                "task": clean(event.get("task") or data.get("task") or "Bilinmiyor", 250),
+                "event": clean(event.get("event") or "Bilinmiyor", 60),
+                "message": clean(message),
+            })
+        path = page.get("next")
+    return job, rows, False
+
+
+def render(job, rows, truncated, include_errors):
+    title = clean(job.get("name") or "Bilinmiyor", 250)
+    job_id = job["id"]
+    link = f"{AWX_BASE}/#/jobs/playbook/{job_id}"
+    intro = [
+        f"AWX Job Hata Raporu - TEST",
+        f"Job: {title}",
+        f"ID: {job_id}",
+        f"Durum: {clean(job.get('status'))}",
+        f"Playbook: {clean(job.get('playbook'))}",
+        f"Baslangic: {clean(job.get('started'))}",
+        f"Bitis: {clean(job.get('finished'))}",
+        f"Hata kaydi sayisi: {len(rows)}" + (" (ilk 200 event)" if truncated else ""),
+        f"AWX: {link}",
+        "",
+    ]
+    text_lines = list(intro)
+    html_rows = []
+    for i, row in enumerate(rows, 1):
+        text_lines += [
+            f"[{i}] {row['host']} | {row['play']} | {row['task']} | {row['event']}",
+        ]
+        if include_errors:
+            text_lines.append(f"Hata: {row['message']}")
+        text_lines.append("")
+        html_rows.append(
+            "<tr>" + "".join(
+                f"<td>{html.escape(str(value))}</td>"
+                for value in (
+                    i, row["host"], row["play"], row["task"], row["event"],
+                    row["message"] if include_errors else "[Testte hata metni e-postaya eklenmedi]",
+                )
+            ) + "</tr>"
+        )
+    header = "".join(f"<p>{html.escape(line)}</p>" for line in intro if line)
+    html_body = (
+        "<html><body><h2>AWX Job Hata Raporu - TEST</h2>"
+        + header
+        + "<table border='1' cellspacing='0' cellpadding='6'>"
+        + "<tr><th>#</th><th>Host</th><th>Play</th><th>Task</th><th>Event</th><th>Hata</th></tr>"
+        + "".join(html_rows) + "</table></body></html>"
+    )
+    if not include_errors:
+        text_lines.append("NOT: TLS olmadigi icin gercek hata aciklamalari e-postaya eklenmedi.")
+    return "\n".join(text_lines), html_body
+
+
+def email_address(prompt):
+    address = input(prompt).strip()
+    name, parsed = parseaddr(address)
+    if name or parsed != address or "@" not in address or any(c.isspace() for c in address):
+        raise ValueError("Gecersiz e-posta adresi")
+    return address
+
+
+def main():
+    parser = argparse.ArgumentParser(description="AWX job hata raporunu goster veya test e-postasi gonder")
+    parser.add_argument("--job-id", type=int, default=30272)
+    parser.add_argument("--send", action="store_true", help="Bir e-posta gonder")
+    parser.add_argument("--include-error-text", action="store_true", help="Hata mesajlarini e-postaya da koy (TLS yok!)")
+    args = parser.parse_args()
+    if args.job_id < 1:
+        parser.error("Job ID pozitif olmali")
+    if args.include_error_text and not args.send:
+        parser.error("--include-error-text ancak --send ile kullanilabilir")
+    token = getpass.getpass("AWX API Token: ")
+    if not token:
+        raise ValueError("Token bos")
+    job, rows, truncated = collect(args.job_id, token)
+    # Bu degisken sistemde dosyaya yazilmaz; terminal oturumuna aittir.
+    del token
+    preview, _ = render(job, rows, truncated, True)
+    print("\n======= RAPOR ONIZLEME =======\n")
+    print(preview)
+    print("\n======= ONIZLEME SONU =======")
+    if not args.send:
+        print("Mail gonderilmedi. Gondermek icin --send parametresi kullan.")
+        return 0
+    if job.get("status") != "failed":
+        raise ValueError("Bu test sadece failed durumundaki Job icin e-posta gonderir")
+    if args.include_error_text:
+        print("UYARI: Hata aciklamalari TLS OLMADAN gonderilecek. Gizli veri icerebilir.")
+        if input("Kurum politikasi izin veriyorsa EVET yaz: ") != "EVET":
+            print("Gonderim iptal edildi")
+            return 1
+    sender = email_address("Gonderen (From): ")
+    recipient = email_address("Alici (To): ")
+    plain, rich = render(job, rows, truncated, args.include_error_text)
+    msg = EmailMessage()
+    msg["From"] = sender
+    msg["To"] = recipient
+    msg["Subject"] = f"[TEST] AWX FAILED | Job {args.job_id}"
+    msg.set_content(plain)
+    msg.add_alternative(rich, subtype="html")
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=20) as smtp:
+        smtp.ehlo()
+        # Bilincli olarak plaintext SMTP; STARTTLS ve SMTP AUTH kullanilmiyor.
+        refused = smtp.send_message(msg)
+        if refused:
+            raise RuntimeError(f"SMTP bazi alicilari reddetti: {refused}")
+    print("SMTP mesaji kabul etti (posta kutusu teslimini ayrica kontrol edin).")
+    print("NOT: Bu manuel test otomatik tekrar engelleme uygulamaz.")
+    return 0
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main())
+    except urllib.error.HTTPError as exc:
+        print(f"API HTTP HATASI: {exc.code}", file=sys.stderr)
+    except urllib.error.URLError as exc:
+        print(f"API BAGLANTI HATASI: {exc.reason}", file=sys.stderr)
+    except (smtplib.SMTPException, OSError, ValueError, RuntimeError) as exc:
+        print(f"HATA: {exc}", file=sys.stderr)
+    except (KeyboardInterrupt, EOFError):
+        print("Test iptal edildi.", file=sys.stderr)
+    sys.exit(1)
